@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VAn</title>
+
+
+
+
+
+
+
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .dress-card {
+      width: 300px;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .dress-card img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    
+    .dress-card h3 {
+      margin: 0;
+      font-size: 18px;
+    }
+    
+    .dress-card p {
+      margin: 5px 0;
+    }
+    
+    .dress-card button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .cart-item {
+      margin-bottom: 10px;
+    }
+  </style>
+
+   
+
+
+ 
+  
+</head>
+<body>
+  <header>
+    
+    <img src="https://vrpunjab.com/UploadFile/StoreImage/Vanheusen2-tu2isx9lu1mhhm9mnhngg0.jpg" alt="Van heusen" height="60" width="200">
+  </header>
+  
+  <main>
+    <div class="dress-card">
+      <img src="https://5.imimg.com/data5/FV/IY/GLADMIN-45489057/van-heusen-black-shirt-500x500.png" alt="Dress 1" height="250" width="250">
+      <h3>Black stripped shirt</h3>
+      <p>Price: Rs.2599</p>
+      <button onclick="addToCart('Dress 1', 2599)">Add to Cart</button>
+      <button onclick = "window.location.href='Reviewsample.html';" >Description</button>
+    </div>
+<br><br><br><br>
+    
+    <div class="dress-card">
+      <img src="https://assets.ajio.com/medias/sys_master/root/20220609/yBz6/62a11141aeb26921af1950d1/-288Wx360H-469212898-navy-MODEL.jpg" alt="Dress 2" height="250" width="250">
+      <h3>Checked shirt</h3>
+      <p>Price: Rs.1999</p>
+      <button onclick="addToCart('Dress 2', 60)">Add to Cart</button>
+      <button onclick = "window.location.href='Reviewsample.html';" >Description</button>
+      <br>
+    </div>
+    
+    <div class="dress-card">
+      <img src="https://cdn.ssactivewear.com/Images/Style/728_fl.jpg" alt="Dress 3" height="250" width="250">
+      <h3>Formal blue shirt</h3>
+      <p>Price: Rs.1499</p>
+      <button onclick="addToCart('Dress 3', 70)">Add to Cart</button>
+      <button onclick = "window.location.href='Reviewsample.html';" >Description</button>
+    </div>
+
+<br><br><br><br>
+    <div class="dress-card">
+      <img src="https://inwear.in/wp-content/uploads/2022/06/510887-3839881-1.jpg" alt="Dress 3" height="250" width="250">
+      <h3>Polo shirt</h3>
+      <p>Price: Rs.2199</p>
+      <button onclick="addToCart('Dress 3', 70)">Add to Cart</button>
+      <button onclick = "window.location.href='Reviewsample.html';" >Description</button>
+    </div>
+  <br><br><br><br>
+
+    <div class="dress-card">
+      <img src="https://img.tatacliq.com/images/i8/437Wx649H/MP000000015282645_437Wx649H_202211131725521.jpeg" alt="Dress 3" height="250" width="250">
+      <br><br>
+      <br><h3>Unisex pink shirt</h3>
+      <p>Price: Rs.3199</p>
+      <button onclick="addToCart('Dress 3', 70)">Add to Cart</button>
+      <button onclick = "window.location.href='Reviewsample.html';" >Description</button>
+    </div>
+  </main>
+
+  </main>
+  
+  <div id="cart">
+    <h2>Shopping Cart</h2>
+    <div id="cart-items"></div>
+    <p>Total: <span id="cart-total">$0</span></p>
+  </div>
+
+
+    
+  
+  <script>
+    // JavaScript code
+    
+    const cartItemsElement = document.getElementById('cart-items');
+    const cartTotalElement = document.getElementById('cart-total');
+    let cartItems = [];
+    let cartTotal = 0;
+    
+    function addToCart(itemName, itemPrice) {
+      const item = {
+        name: itemName,
+        price: itemPrice
+      };
+      cartItems.push(item);
+      cartTotal += itemPrice;
+      
+      updateCart();
+    }
+    
+    function updateCart() {
+      cartItemsElement.innerHTML = '';
+      
+      cartItems.forEach(item => {
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('cart-item');
+        
+        const itemNameElement = document.createElement('span');
+        itemNameElement.textContent = item.name;
+        itemElement.appendChild(itemNameElement);
+        
+        const itemPriceElement = document.createElement('span');
+        itemPriceElement.textContent = `$${item.price}`;
+        itemElement.appendChild(itemPriceElement);
+        
+        cartItemsElement.appendChild(itemElement);
+      });
+      
+      cartTotalElement.textContent = `$${cartTotal}`;
+    }
+
+
+    
+  </script>
+  <button onclick = "window.location.href='mini-project.html';" >Place order</button>
+
+
+</body>
+</html>
